@@ -1,27 +1,27 @@
 <div class="container" >
-<div class="col-12 col-sm-12 col-md-8 col-lg-5 mx-auto">
-  <h1 class="mt-5">Login!</h1>
-
-  <div class="row" *ngIf="authError">
-    <div class="alert alert-danger">
-      {{authError?.message}}
+  <div class="col-12 col-sm-12 col-md-8 col-lg-5 mx-auto">
+    <h1 class="mt-5">Login!</h1>
+    <!-- si existe un error en firebase aqui es donde se despliega -->
+    <div class="row" *ngIf="authError">
+      <div class="alert alert-danger">
+        {{authError?.message}}
+      </div>
     </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input ngModel #email="ngModel" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input ngModel #email="ngModel" name="password" type="password" class="form-control" id="password">
+      </div>
+      <div class="row">
+        <a routerLink="/register">Crear usuario</a>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-
-  <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)">
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input ngModel #email="ngModel" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input ngModel #email="ngModel" name="password" type="password" class="form-control" id="password">
-    </div>
-    <div class="row">
-      <a routerLink="/register">Crear usuario</a>
-
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
 </div>
