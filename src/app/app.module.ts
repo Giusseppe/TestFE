@@ -8,9 +8,8 @@ import { ListComponent } from './list/list.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RegistrationComponent } from './auth/registration/registration.component';
-import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,8 +17,7 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginComponent,
     ListComponent,
-    RegistrationComponent,
-    HomeComponent
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +25,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFirestoreModule
 
   ],
   providers: [],

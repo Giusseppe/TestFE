@@ -9,28 +9,24 @@
 
   <form #newUserForm="ngForm" (ngSubmit)="register(newUserForm)">
     <div class="form-group">
-      <label for="name">Nombre</label>
-      <input type="text" class="form-control" id="name" >
+      <label for="firstName">Nombre</label>
+      <input ngModel #firstName="ngModel" name="firstName" type="firstName" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="lastname">Apellido</label>
-      <input type="text" class="form-control" id="lastname" >
+      <label for="lastName">Apellido</label>
+      <input ngModel #lastname="ngModel" name="lastName" type="lastName" class="form-control" >
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="email">Email</label>
+      <input ngModel #email="ngModel" name="email" type="email" class="form-control" aria-describedby="emailHelp">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
 
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password">
-    </div>
-    <div class="form-group">
-      <label for="cpassword">Confirmar Password</label>
-      <input type="password" class="form-control" id="cpassword">
+      <input ngModel #password="ngModel" name="password" type="password" class="form-control">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

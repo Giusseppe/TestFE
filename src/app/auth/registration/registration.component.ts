@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  authError: any;
+
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+    /**
+     * si se gatilla un error en la autentificacion se almacena en nuestra variable authError
+     */
+    this.auth.eventAuthErrors$.subscribe(data => {
+      this.authError = data;
+    });
   }
 
+  register(user){
+    this.auth.createUser(user.value);
+  }
 }
