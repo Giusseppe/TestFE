@@ -38,7 +38,7 @@ export class AuthService {
 
         this.insertUserData(creadencials)
           .then(() => {
-            this.router.navigate(['/list']);
+            this.router.navigate(['/main']);
           }
         );
       }
@@ -62,6 +62,32 @@ export class AuthService {
       firstname: this.newUser.firstName,
       lastname: this.newUser.lastName,
       role: 'network user'
+    });
+  }
+
+  /**
+   *
+   */
+  logout(){
+    return this.afAuth.signOut();
+  }
+
+  /**
+   * obtiene la info del usuario logueado
+   */
+  getUserState(){
+    return this.afAuth.authState;
+  }
+
+  login(email: string,password: string){
+    this.afAuth.signInWithEmailAndPassword(email,password)
+    .catch(error => {
+      this.eventAuthError.next(error);
+    })
+    .then(userCredential => {
+      if(userCredential){
+        this.router.navigate(['main']);
+      }
     });
   }
 }

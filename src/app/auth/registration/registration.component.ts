@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  authError: any;
+  authError: any = null;
 
   constructor(private auth: AuthService) { }
 

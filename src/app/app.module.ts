@@ -4,12 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FormsModule } from '@Angular/forms';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './main/list/list.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     AppComponent,
     LoginComponent,
     ListComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
