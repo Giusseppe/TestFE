@@ -14,9 +14,7 @@
       <button class="btn btn-primary" *ngIf="user" (click)="logout()">Salir</button>
     </div>
   </nav>
-  <div class="container-fluid">
     <app-list></app-list>
-  </div>
 </ng-container>
 <!-- este if lo hago para manejar cuando se ingresa por la url y no se esta autentificado, se carga el componente login , no conosco una forma rapida y eficiente de como hacer esto, me falto research ahi :/ -->
 <ng-container *ngIf="!user">

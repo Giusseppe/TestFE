@@ -1,26 +1,14 @@
-<div class="col-12 col-sm-12 col-md-8 col-lg-5 mx-auto">
-  <h1 class="mt-2">Listado!</h1>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Foto</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Edad</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users; let i = index">
-          <td>{{i}}</td>
-          <td><img src="{{user.picture.thumbnail}}" alt="user.name.first" class="img-thumbnail"></td>
-          <td>{{user.name.first}} &nbsp; {{user.name.last }}  </td>
-          <td>{{user.email}}</td>
-          <td>{{user.dob.age}}</td>
-        </tr>
+<div class="col-12 col-sm-12 col-md-8 col-lg-10 mx-auto">
+  <h1 class="mt-2">Listado de usuarios</h1>
 
-      </tbody>
-    </table>
+  <div *ngFor="let user of users" class="d-inline-flex m-1" >
+      <div class="card" style="width: 18rem;">
+        <img src="{{user.picture.large}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name.first}}&nbsp;{{user.name.last}}</h5>
+          <p class="card-text">{{user.email}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
   </div>
 </div>
