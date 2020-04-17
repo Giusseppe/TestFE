@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetalleComponent } from './main/list/detalle/detalle.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ListComponent,
     RegistrationComponent,
-    MainComponent
+    MainComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
