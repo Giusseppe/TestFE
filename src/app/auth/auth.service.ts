@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -89,5 +90,10 @@ export class AuthService {
         this.router.navigate(['main']);
       }
     });
+  }
+  async googleLogin(){
+    const provider = new auth.GoogleAuthProvider();
+    const creadencials = await this.afAuth.signInWithPopup(provider);
+    return this.insertUserData(creadencials);
   }
 }

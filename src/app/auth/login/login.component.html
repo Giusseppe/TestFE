@@ -20,7 +20,18 @@
       <div class="form-group">
         <a routerLink="/register">Crear usuario</a>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="col">
+
+      <div class="row justify-content-center">
+          <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div class="row justify-content-center my-3">
+        <div > --- or ---</div>
+      </div>
+      <div class="row justify-content-center">
+        <button type="button" (click)="onSumitGoogleLogin()" class="btn btn-info my-auto"><i class="google-icon"></i><span style="font-size:20px;vertical-align: middle;">Login with Google</span></button>
+      </div>
+    </div>
     </form>
   </div>
 </div>

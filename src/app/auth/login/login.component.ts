@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   authError: any = null;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,private router: Router) { }
 
   ngOnInit(): void {
     //siempre se esta escuchando si existe un error.
@@ -24,5 +25,9 @@ export class LoginComponent implements OnInit {
    */
   onSubmitLogin(loginForm){
     this.auth.login(loginForm.value.email, loginForm.value.password);
+  }
+  onSumitGoogleLogin(){
+    this.auth.googleLogin()
+    .then( () => this.router.navigate(['main']));
   }
 }

@@ -1,0 +1,9 @@
+.google-icon {
+  background-image : url(/assets/icons/google.png);
+  background-size: cover;
+  display: inline-block;
+  margin-right: 3px;
+  vertical-align: middle;
+  height: 35px;
+  width: 35px;
+}
